@@ -1,4 +1,4 @@
-Role Name
+Lighthouse-role
 =========
 
 Эта роль поднимает статику lighthouse для просмотра логов из Clickhouse.

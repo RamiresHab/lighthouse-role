@@ -1,0 +1,32 @@
+---
+# tasks file for lighthouse-role
+- name: Install nginx
+  become: true
+  ansible.builtin.apt:
+    name: nginx
+- name: Download lighthouse
+  become: true
+  ansible.builtin.git:
+    repo: https://github.com/VKCOM/lighthouse.git
+    dest: /var/www/lighthouse
+    update: no
+- name: Fix owner and mode
+  become: true
+  ansible.builtin.file:
+    path: /var/www/lighthouse
+    state: directory
+    mode: '0755'
+    owner: www-data
+- name: nginx config
+  become: true
+  ansible.builtin.template:
+    src: template/lighthouse.j2
+    dest: /etc/nginx/sites-available/lighthouse
+    owner: www-data
+- name: Symlink to sites-enabled
+  become: true
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/lighthouse
+    dest: /etc/nginx/sites-enabled/lighthouse
+    state: link
+  notify: Start nginx service

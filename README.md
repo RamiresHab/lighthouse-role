@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Эта роль разворачивает сервер nginx и поднимает статику lighthouse для просмотра логов из Clickhouse.
+Эта роль поднимает статику lighthouse для просмотра логов из Clickhouse.
 
 Requirements
 ------------
@@ -25,7 +25,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: lighthouse-role }
+         - lighthouse-role
 
 License
 -------

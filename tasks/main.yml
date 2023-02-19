@@ -20,7 +20,7 @@
 - name: nginx config
   become: true
   ansible.builtin.template:
-    src: template/lighthouse.j2
+    src: roles/lighthouse-role/templates/lighthouse.j2
     dest: /etc/nginx/sites-available/lighthouse
     owner: www-data
 - name: Symlink to sites-enabled

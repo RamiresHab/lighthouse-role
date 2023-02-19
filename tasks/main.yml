@@ -1,9 +1,5 @@
 ---
 # tasks file for lighthouse-role
-- name: Install nginx
-  become: true
-  ansible.builtin.apt:
-    name: nginx
 - name: Download lighthouse
   become: true
   ansible.builtin.git:

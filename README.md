@@ -1,7 +1,7 @@
 Lighthouse-role
 =========
 
-Эта роль поднимает статику lighthouse для просмотра логов из Clickhouse.
+Эта роль поднимает статику lighthouse для просмотра логов из Clickhouse. Для работы роли нужен установленный web-сервер nginx
 
 Requirements
 ------------
